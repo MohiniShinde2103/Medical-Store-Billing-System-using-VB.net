@@ -1,0 +1,1194 @@
+Public Class Form1
+    Dim str1 As String = "shree"
+    Dim str2 As String = "mas125"
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim i As Integer
+        If StrComp(TextBox1.Text, str1) = 0 And StrComp(TextBox2.Text, str2) = 0 Then
+            ProgressBar1.Minimum = 0
+            ProgressBar1.Maximum = 100
+            For i = 0 To 100 Step +5
+                ProgressBar1.Value = i
+            Next
+            Form2.Show()
+        Else
+            If str1 = TextBox1.Text Then
+                ErrorProvider1.SetError(TextBox2, "Enter password again")
+            Else
+                ErrorProvider1.SetError(TextBox1, "Enter UserID again")
+            End If
+        End If
+    End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs)
+
+    End Sub
+End Class
+
+
+
+
+
+
+
+
+Imports System
+Imports System.Data.OleDb
+Imports System.Data
+   Public Class Form2
+        Private conn As OleDbConnection
+        Private adpt As OleDbDataAdapter
+        Private cmdbld As OleDbCommandBuilder
+        Private myDs As DataSet
+    Private sqlStr As String
+    Dim a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30, a31, a32, a33, a34, a35, a36, a37, a38, a39, a40, a41, a42, a43, a44, a45, a46, a47, a48, a49, a50, a51, a52, a53, a54, a55, a56, a57, a58, a59, a60 As Integer
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        TextBox1.Text = " "
+        TextBox2.Text = " "
+        TextBox4.Text = " "
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.Close()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        If Label6.Text = "Tablets" And CheckBox1.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Analgin"
+                newRow("Price") = "4"
+                newRow("Quantity") = TextBox4.Text
+                m = 4 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a1 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label6.Text = "Tablets" And CheckBox2.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Aspirin"
+                newRow("Price") = "5"
+                newRow("Quantity") = TextBox4.Text
+                m = 5 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a2 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label6.Text = "Tablets" And CheckBox3.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "VitC"
+                newRow("Price") = "4"
+                newRow("Quantity") = TextBox4.Text
+                m = 4 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a3 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label6.Text = "Tablets" And CheckBox4.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Bacompicllin"
+                newRow("Price") = "8"
+                newRow("Quantity") = TextBox4.Text
+                m = 8 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a4 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label6.Text = "Tablets" And CheckBox5.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Riboflavin"
+                newRow("Price") = "5+"
+                newRow("Quantity") = TextBox4.Text
+                m = 5 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a5 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label6.Text = "Tablets" And CheckBox6.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "VitB1"
+                newRow("Price") = "2"
+                newRow("Quantity") = TextBox4.Text
+                m = 2 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a6 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label6.Text = "Tablets" And CheckBox7.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Virapmil"
+                newRow("Price") = "4"
+                newRow("Quantity") = TextBox4.Text
+                m = 4 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a7 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label6.Text = "Tablets" And CheckBox8.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "VitA"
+                newRow("Price") = "3"
+                newRow("Quantity") = TextBox4.Text
+                m = 3 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a8 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label6.Text = "Tablets" And CheckBox9.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Tolnaftale"
+                newRow("Price") = "5"
+                newRow("Quantity") = TextBox4.Text
+                m = 5 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a9 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label6.Text = "Tablets" And CheckBox10.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Betamethasone"
+                newRow("Price") = "6"
+                newRow("Quantity") = TextBox4.Text
+                m = 6 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a10 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label7.Text = "Capsules" And CheckBox11.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Darapriam"
+                newRow("Price") = "4"
+                newRow("Quantity") = TextBox4.Text
+                m = 4 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a11 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label7.Text = "Capsules" And CheckBox12.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Pudianhara capsule"
+                newRow("Price") = "5"
+                newRow("Quantity") = TextBox4.Text
+                m = 5 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a12 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label7.Text = "Capsules" And CheckBox13.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Haemat"
+                newRow("Price") = "12"
+                newRow("Quantity") = TextBox4.Text
+                m = 12 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a13 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label7.Text = "Capsules" And CheckBox14.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Pregamax"
+                newRow("Price") = "3"
+                newRow("Quantity") = TextBox4.Text
+                m = 3 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a14 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label7.Text = "Capsules" And CheckBox15.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Macrodantin"
+                newRow("Price") = "10"
+                newRow("Quantity") = TextBox4.Text
+                m = 10 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a15 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label7.Text = "Capsules" And CheckBox16.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Omnipit"
+                newRow("Price") = "8"
+                newRow("Quantity") = TextBox4.Text
+                m = 8 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a16 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label7.Text = "Capsules" And CheckBox17.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Doxysina"
+                newRow("Price") = "6"
+                newRow("Quantity") = TextBox4.Text
+                m = 6 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a17 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label7.Text = "Capsules" And CheckBox18.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Altofer_C"
+                newRow("Price") = "5"
+                newRow("Quantity") = TextBox4.Text
+                m = 5 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a18 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label7.Text = "Capsules" And CheckBox19.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Snadimmume"
+                newRow("Price") = "9"
+                newRow("Quantity") = TextBox4.Text
+                m = 9 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a19 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label7.Text = "Capsules" And CheckBox20.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Nexium"
+                newRow("Price") = "8"
+                newRow("Quantity") = TextBox4.Text
+                m = 8 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a20 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label8.Text = "Syrup" And CheckBox21.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Codral cold & Flu"
+                newRow("Price") = "25"
+                newRow("Quantity") = TextBox4.Text
+                m = 25 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a21 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label8.Text = "Syrup" And CheckBox22.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Codral Dry Cough Liquid"
+                newRow("Price") = "30"
+                newRow("Quantity") = TextBox4.Text
+                m = 30 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a22 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label8.Text = "Syrup" And CheckBox23.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Demazin"
+                newRow("Price") = "50"
+                newRow("Quantity") = TextBox4.Text
+                m = 50 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a23 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label8.Text = "Syrup" And CheckBox24.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Actified Dry"
+                newRow("Price") = "60"
+                newRow("Quantity") = TextBox4.Text
+                m = 60 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a24 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label8.Text = "Syrup" And CheckBox25.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Buckleys DM"
+                newRow("Price") = "30"
+                newRow("Quantity") = TextBox4.Text
+                m = 30 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a25 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label8.Text = "Syrup" And CheckBox26.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Codicough"
+                newRow("Price") = "55"
+                newRow("Quantity") = TextBox4.Text
+                m = 55 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a26 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label8.Text = "Syrup" And CheckBox27.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Lemsip Max Sinus"
+                newRow("Price") = "60"
+                newRow("Quantity") = TextBox4.Text
+                m = 60 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a27 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label8.Text = "Syrup" And CheckBox28.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Dry Cough Mixture"
+                newRow("Price") = "40"
+                newRow("Quantity") = TextBox4.Text
+                m = 40 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a28 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label8.Text = "Syrup" And CheckBox29.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Demazin Cold Relief Blue"
+                newRow("Price") = "35"
+                newRow("Quantity") = TextBox4.Text
+                m = 35 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a29 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label8.Text = "Syrup" And CheckBox30.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Maxiclear Cold & Flu Relief"
+                newRow("Price") = "50"
+                newRow("Quantity") = TextBox4.Text
+                m = 50 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a30 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label9.Text = "General" And CheckBox31.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Powder"
+                newRow("Price") = "30"
+                newRow("Quantity") = TextBox4.Text
+                m = 30 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a31 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label9.Text = "General" And CheckBox32.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Vasline"
+                newRow("Price") = "20"
+                newRow("Quantity") = TextBox4.Text
+                m = 20 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a32 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        ElseIf Label9.Text = "General" And CheckBox33.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Chocolate"
+                newRow("Price") = "10"
+                newRow("Quantity") = TextBox4.Text
+                m = 10 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a33 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label9.Text = "General" And CheckBox34.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Sanitary Pad"
+                newRow("Price") = "50"
+                newRow("Quantity") = TextBox4.Text
+                m = 50 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a34 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label9.Text = "General" And CheckBox35.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Toothpaste"
+                newRow("Price") = "60"
+                newRow("Quantity") = TextBox4.Text
+                m = 60 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a35 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label9.Text = "General" And CheckBox36.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Soap"
+                newRow("Price") = "40"
+                newRow("Quantity") = TextBox4.Text
+                m = 40 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a36 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label9.Text = "General" And CheckBox37.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Perfume"
+                newRow("Price") = "200"
+                newRow("Quantity") = TextBox4.Text
+                m = 200 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a37 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label9.Text = "General" And CheckBox38.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Shampoo"
+                newRow("Price") = "5"
+                newRow("Quantity") = TextBox4.Text
+                m = 5 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a38 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label9.Text = "General" And CheckBox39.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Energy drink"
+                newRow("Price") = "80"
+                newRow("Quantity") = TextBox4.Text
+                m = 80 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a39 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label9.Text = "General" And CheckBox40.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Pedigree"
+                newRow("Price") = "150"
+                newRow("Quantity") = TextBox4.Text
+                m = 150 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a40 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label10.Text = "Injection" And CheckBox41.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Analgil"
+                newRow("Price") = "90"
+                newRow("Quantity") = TextBox4.Text
+                m = 90 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a41 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label10.Text = "Injection" And CheckBox42.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Vit A"
+                newRow("Price") = "120"
+                newRow("Quantity") = TextBox4.Text
+                m = 120 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a42 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label10.Text = "Injection" And CheckBox43.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Vit C"
+                newRow("Price") = "90"
+                newRow("Quantity") = TextBox4.Text
+                m = 90 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a43 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label10.Text = "Injection" And CheckBox44.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Betamethasone"
+                newRow("Price") = "85"
+                newRow("Quantity") = TextBox4.Text
+                m = 85 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a44 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label10.Text = "Injection" And CheckBox45.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Verapamil"
+                newRow("Price") = "100"
+                newRow("Quantity") = TextBox4.Text
+                m = 100 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a45 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        ElseIf Label11.Text = "Inhalers" And CheckBox46.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Advair"
+                newRow("Price") = "30"
+                newRow("Quantity") = TextBox4.Text
+                m = 30 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a46 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label11.Text = "Inhalers" And CheckBox47.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Spiriva"
+                newRow("Price") = "25"
+                newRow("Quantity") = TextBox4.Text
+                m = 25 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a47 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label11.Text = "Inhalers" And CheckBox48.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "proventil"
+                newRow("Price") = "40"
+                newRow("Quantity") = TextBox4.Text
+                m = 40 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a48 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label11.Text = "Inhalers" And CheckBox49.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Atrovent"
+                newRow("Price") = "30"
+                newRow("Quantity") = TextBox4.Text
+                m = 30 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a49 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label11.Text = "Inhalers" And CheckBox50.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Brovana"
+                newRow("Price") = "20"
+                newRow("Quantity") = TextBox4.Text
+                m = 20 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a50 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label12.Text = "Drops" And CheckBox51.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Vit C"
+                newRow("Price") = "50"
+                newRow("Quantity") = TextBox4.Text
+                m = 50 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a51 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label12.Text = "Drops" And CheckBox52.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Betamethasone"
+                newRow("Price") = "70"
+                newRow("Quantity") = TextBox4.Text
+                m = 70 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a52 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label12.Text = "Drops" And CheckBox53.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Azelastine"
+                newRow("Price") = "55"
+                newRow("Quantity") = TextBox4.Text
+                m = 55 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a53 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label12.Text = "Drops" And CheckBox54.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Cromolyn"
+                newRow("Price") = "65"
+                newRow("Quantity") = TextBox4.Text
+                m = 65 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a54 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label12.Text = "Drops" And CheckBox55.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Emadastina"
+                newRow("Price") = "60"
+                newRow("Quantity") = TextBox4.Text
+                m = 60 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a55 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label13.Text = "Topical Medicines" And CheckBox56.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Lozivate F Cream"
+                newRow("Price") = "30"
+                newRow("Quantity") = TextBox4.Text
+                m = 30 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a56 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label13.Text = "Topical Medicines" And CheckBox57.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Lumaglo Cream"
+                newRow("Price") = "54"
+                newRow("Quantity") = TextBox4.Text
+                m = 54 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a57 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label13.Text = "Topical Medicines" And CheckBox58.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Calpsor C Lotion"
+                newRow("Price") = "44"
+                newRow("Quantity") = TextBox4.Text
+                m = 44 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a58 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label13.Text = "Topical Medicines" And CheckBox59.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Candid Total Plus Cream "
+                newRow("Price") = "25"
+                newRow("Quantity") = TextBox4.Text
+                m = 25 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a59 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf Label13.Text = "Topical Medicines" And CheckBox60.Checked = True Then
+            Try
+                Dim m As Integer
+                Dim newRow As DataRow = myDs.Tables("MBS").NewRow()
+                newRow("Customer") = TextBox1.Text
+                newRow("Medicines") = "Lozivate Cream"
+                newRow("Price") = "30"
+                newRow("Quantity") = TextBox4.Text
+                m = 30 * Integer.Parse(TextBox4.Text)
+                newRow("Total") = m
+                a60 = m
+                myDs.Tables("MBS").Rows.Add(newRow)
+                adpt.Update(myDs, "MBS")
+                MsgBox("Record successfully added")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        End If
+    End Sub
+    Public Function total_bill(ByVal t1 As Integer, ByVal t2 As Integer, ByVal t3 As Integer, ByVal t4 As Integer, ByVal t5 As Integer, ByVal t6 As Integer, ByVal t7 As Integer, ByVal t8 As Integer, ByVal t9 As Integer, ByVal t10 As Integer, ByVal t11 As Integer, ByVal t12 As Integer, ByVal t13 As Integer, ByVal t14 As Integer, ByVal t15 As Integer, ByVal t16 As Integer, ByVal t17 As Integer, ByVal t18 As Integer, ByVal t19 As Integer, ByVal t20 As Integer, ByVal t21 As Integer, ByVal t22 As Integer, ByVal t23 As Integer, ByVal t24 As Integer, ByVal t25 As Integer, ByVal t26 As Integer, ByVal t27 As Integer, ByVal t28 As Integer, ByVal t29 As Integer, ByVal t30 As Integer, ByVal t31 As Integer, ByVal t32 As Integer, ByVal t33 As Integer, ByVal t34 As Integer, ByVal t35 As Integer, ByVal t36 As Integer, ByVal t37 As Integer, ByVal t38 As Integer, ByVal t39 As Integer, ByVal t40 As Integer, ByVal t41 As Integer, ByVal t42 As Integer, ByVal t43 As Integer, ByVal t44 As Integer, ByVal t45 As Integer, ByVal t46 As Integer, ByVal t47 As Integer, ByVal t48 As Integer, ByVal t49 As Integer, ByVal t50 As Integer, ByVal t51 As Integer, ByVal t52 As Integer, ByVal t53 As Integer, ByVal t54 As Integer, ByVal t55 As Integer, ByVal t56 As Integer, ByVal t57 As Integer, ByVal t58 As Integer, ByVal t59 As Integer, ByVal t60 As Integer)
+        Dim Finalbill As Integer
+        Finalbill = t1 + t2 + t3 + t4 + t5 + t6 + t7 + t8 + t9 + t10 + t11 + t12 + t13 + t14 + t15 + t16 + t17 + t18 + t19 + t20 + t21 + t22 + t23 + t24 + t25 + t26 + t27 + t28 + t29 + t30 + t31 + t32 + t33 + t34 + t35 + t36 + t37 + t38 + t39 + t40 + t41 + t42 + t43 + t44 + t45 + t46 + t47 + t48 + t49 + t50 + t51 + t52 + t53 + t54 + t55 + t56 + t57 + t58 + t59 + t60
+        Return Finalbill
+    End Function
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim total As Integer
+        total = total_bill(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30, a31, a32, a33, a34, a35, a36, a37, a38, a39, a40, a41, a42, a43, a44, a45, a46, a47, a48, a49, a50, a51, a52, a53, a54, a55, a56, a57, a58, a59, a60)
+        TextBox3.Text = total
+    End Sub
+    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ComboBox1.Items.Add("Cash")
+        ComboBox1.Items.Add("PayTM")
+        Dim connStr As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\HP PC\Documents\BillDb.accdb"
+        conn = New OleDbConnection(connStr)
+        conn.Open()
+        myDs = New DataSet()
+        sqlStr = "SELECT*FROM MBS"
+        adpt = New OleDbDataAdapter(sqlStr, conn)
+        adpt.SelectCommand.CommandText = sqlStr
+        cmdbld = New OleDbCommandBuilder(adpt)
+        adpt.Fill(myDs, "MBS")
+        DataGridView1.DataSource = myDs.Tables(0)
+    End Sub
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+        GroupBox1.Visible = True
+        CheckBox1.Text = "Analgin"
+        CheckBox2.Text = "Aspirin"
+        CheckBox3.Text = "VitC"
+        CheckBox4.Text = "Bacompicllin"
+        CheckBox5.Text = "Riboflavin"
+        CheckBox6.Text = "VitB1"
+        CheckBox7.Text = "Virapmil"
+        CheckBox8.Text = "VitA"
+        CheckBox9.Text = "Tolnaftale"
+        CheckBox10.Text = "Betamethasone"
+    End Sub
+    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
+        GroupBox3.Visible = True
+        CheckBox21.Text = "Codral cold & Flu"
+        CheckBox22.Text = "Codral Dry Cough Liquid"
+        CheckBox23.Text = "Demazin"
+        CheckBox24.Text = "Actified Dry"
+        CheckBox25.Text = "Buckleys DM"
+        CheckBox26.Text = "Codicough"
+        CheckBox27.Text = "Lemsip Max Sinus"
+        CheckBox28.Text = "Dry Cough Mixture"
+        CheckBox29.Text = "Demazin Cold Relief Blue"
+        CheckBox30.Text = "Maxiclear Cold & Flu Relief"
+    End Sub
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+        GroupBox2.Visible = True
+        CheckBox11.Text = "Darapriam"
+        CheckBox12.Text = "Pudianhara capsule"
+        CheckBox13.Text = "Haemat"
+        CheckBox14.Text = "Pregamax"
+        CheckBox15.Text = "Macrodantin"
+        CheckBox16.Text = "Omnipit"
+        CheckBox17.Text = "Doxysina"
+        CheckBox18.Text = "Altofer_C"
+        CheckBox19.Text = "Snadimmume"
+        CheckBox20.Text = "Nexium"
+    End Sub
+    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
+        GroupBox4.Visible = True
+        CheckBox31.Text = "Powder"
+        CheckBox32.Text = "Vasline"
+        CheckBox33.Text = "Chocolate"
+        CheckBox34.Text = "Sanitary Pad"
+        CheckBox35.Text = "Toothpaste"
+        CheckBox36.Text = "Soap"
+        CheckBox37.Text = "Perfume"
+        CheckBox38.Text = "Shampoo"
+        CheckBox39.Text = "Energy drink"
+        CheckBox40.Text = "Pedigree"
+    End Sub
+    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
+        GroupBox5.Visible = True
+        CheckBox41.Text = "Analgil"
+        CheckBox42.Text = "Vit A"
+        CheckBox43.Text = "Vit C"
+        CheckBox44.Text = "Betamethasone "
+        CheckBox45.Text = "Verapamil"
+    End Sub
+    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
+        GroupBox6.Visible = True
+        CheckBox46.Text = "Advair"
+        CheckBox47.Text = "Spiriva"
+        CheckBox48.Text = "proventil"
+        CheckBox49.Text = "Atrovent"
+        CheckBox50.Text = "Brovana"
+    End Sub
+
+    Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
+        GroupBox7.Visible = True
+        CheckBox51.Text = "Vit C"
+        CheckBox52.Text = "Betamethasone"
+        CheckBox53.Text = "Azelastine"
+        CheckBox54.Text = "Cromolyn"
+        CheckBox55.Text = "Emadastina"
+    End Sub
+    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
+        GroupBox8.Visible = True
+        CheckBox56.Text = "Lozivate F Cream"
+        CheckBox57.Text = "Lumaglo Cream"
+        CheckBox58.Text = "Calpsor C Lotion"
+        CheckBox59.Text = "Candid Total Plus Cream"
+        CheckBox60.Text = "Lozivate Cream"
+    End Sub
+End Class
