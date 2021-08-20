@@ -1,0 +1,2 @@
+# Medical-Store-Billing-System-using-VB.net
+“Medical store billing system” enables to manage and record the activities of whole medical shop of multi-facility skills only. It enables the other staff to provide their services in a more systematic and efficient manner, hence improving the goodwill of concerned institution.           This project provides the facility to get the details of availability of medicines required by the customer. It will also prepare the bill according to the medicines with their price details and also the quantity.
